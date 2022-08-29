@@ -45,3 +45,9 @@ form.addEventListener("submit", (e) => {
         inputs.value = "";
     }
 });
+
+
+
+window.addEventListener("resize", () => {
+    console.log(window.innerWidth);
+})
