@@ -85,6 +85,7 @@ section.main{
 .movie img{
     width: 30%;
     margin-right: .5rem;
+    object-fit: cover;
 }
 .movie h3{
     font-size: 120%;
