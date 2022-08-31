@@ -21,14 +21,27 @@ function displayMovie(movies) {
     move.innerHTML = "";
     for (let index = 0; index < movies.length; index++) {
         const eachMovie = movies[index];
-        
+        let img ;
+        if(eachMovie.backdrop_path){
+            img = imgPATH + eachMovie.backdrop_path;
+        }
+        else{
+            img = "./random.jpg";
+        }
+        let overview;
+        if(eachMovie.overview){
+            overview = eachMovie.overview;
+        }
+        else{
+            overview ="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt vero autem, accusantium adipisci porro totam in, laboriosam fugit voluptas voluptatum iusto, reprehenderit maxime fugiat? Maxime quas consequatur doloribus doloremque cupiditate?"
+        }
         let html = `<div class="movie">
-                        <img src="${imgPATH + eachMovie.backdrop_path}" alt="movies image">
+                        <img src="${img}" alt="movies image">
                         <div class="texts">
                             <h3>${eachMovie.title}</h3>
                             <hr>
                             <h3 class="rate">Rating: <span>${eachMovie.vote_average}</span></h3>
-                            <p class="overview">${eachMovie.overview}</p>
+                            <p class="overview">${overview}</p>
                         </div>
                     </div>`
        move.innerHTML += html;
